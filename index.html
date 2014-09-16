@@ -673,7 +673,7 @@
 
       $.get("http://ipinfo.io", function(response) {
           var ip = response.ip;
-          
+          alert( ip )
           if( $.inArray( ip, ipadd ) ) {
             ipadd.push( ip );
           } 
