@@ -666,23 +666,6 @@
     <script src="js/freelancer.js"></script>
     <script type="text/javascript">
       var ipadd = new Array();
-      $(window).load(function() {
-      // light
-      $('.tl1').timeline({
-          openTriggerClass : '.read_more',
-          startItem : '12/03/2009',
-          closeText : 'x',
-          ajaxFailMessage: 'This ajax fail is made on purpose. You can add your own message here, just remember to escape single quotes if you\'re using them.'
-      });
-      $('.tl1').on('ajaxLoaded.timeline', function(e){
-          var height = e.element.height()-60-e.element.find('h2').height();
-          e.element.find('.timeline_open_content span').css('max-height', height).mCustomScrollbar({
-              autoHideScrollbar:true,
-              theme:"light-thin"
-      }); 
-      });
-      
-      });
       var d = new Date();
       var n = d.getFullYear();
 
@@ -693,7 +676,9 @@
           if( $.inArray( ip, ipadd ) ) {
             ipadd.push( ip );
           } 
-          $( '.visit-count' ).html( ipadd.length )
+          localStorage.setItem( "views", ipadd.length );
+          
+          $( '.visit-count' ).html( localStorage.getItem( "views" ) )
       });
 
       
