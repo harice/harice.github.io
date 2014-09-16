@@ -673,13 +673,14 @@
 
       $.get("http://ipinfo.io", function(response) {
           var ip = response.ip;
+          
           if( $.inArray( ip, ipadd ) ) {
             ipadd.push( ip );
           } 
           localStorage.setItem( "views", ipadd.length );
-          
+
           $( '.visit-count' ).html( localStorage.getItem( "views" ) )
-      });
+      }, "jsonp");
 
       
       
