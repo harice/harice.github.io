@@ -1,0 +1,16 @@
+
+.text{
+    font-size: 1.5em;
+    color:#acb6c0;
+    opacity:1;
+    word-wrap: break-word;
+}
+.no-side-padding{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.views a:hover{
+    background: #E74C3C !important;
+    color: #ffffff !important;
+}
