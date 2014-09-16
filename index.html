@@ -669,6 +669,8 @@
       var d = new Date();
       var n = d.getFullYear();
 
+      localStorage.setItem( "count", 0 );
+
       $( "#year" ).html( n )
 
       $.get("http://ipinfo.io", function(response) {
@@ -680,7 +682,7 @@
           //localStorage.setItem( "views", ipadd.length );
 
           //$( '.visit-count' ).html( localStorage.getItem( "views" ) )
-          localStorage["ipadd"] = JSON.stringify( ipadd );
+          localStorage[ "ipadd" + parseInt( localStorage.getItem( "count" ) + 1 ) ] = JSON.stringify( ipadd );
 
           var ipadd = JSON.parse(localStorage["ipadd"]);
           console.log( ipadd );
