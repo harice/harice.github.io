@@ -675,12 +675,18 @@
           var ip = response.ip;
 
           if( $.inArray( ip, ipadd ) ) {
-            ipadd.push( ip );
-          } 
-          localStorage.setItem( "views", ipadd.length );
+            ipadd = new Array( ip );
+          }
+          //localStorage.setItem( "views", ipadd.length );
 
-          $( '.visit-count' ).html( localStorage.getItem( "views" ) )
+          //$( '.visit-count' ).html( localStorage.getItem( "views" ) )
+          localStorage["ipadd"] = JSON.stringify( ipadd );
+
+          var ipadd = JSON.parse(localStorage["ipadd"]);
+          console.log( ipadd );
       }, "jsonp");
+
+     
 
       
       
