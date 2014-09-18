@@ -55,12 +55,6 @@
             <li class="page-scroll">
               <a href="#contact">Contact</a>
             </li>
-            <li class="views">
-              <a class="bg-success">
-                Views &nbsp;
-                <span class="badge pull-right visit-count">0</span>
-              </a>
-            </li>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -613,36 +607,10 @@
     <!-- Page Scroll -->
     <script src="js/freelancer.js"></script>
     <script type="text/javascript">
-     // var ipadd = new Array();
+		<!-- Footer Year -->
       var d = new Date();
       var n = d.getFullYear();
-
       $( "#year" ).html( n )
-
-      $.get("http://ipinfo.io", function(response) {
-          var ip = response.ip;
-
-          if( $.inArray( ip, ipadd ) ) {
-            var ipadd = { ip: ip };
-          }
-          localStorage.setItem("ipadd", ipadd);
-          var ipadd = localStorage.getItem("ipadd");
-          console.log(ipadd); //Logs "[object Object]"
-          /*//localStorage.setItem( "views", ipadd.length );
-
-          //$( '.visit-count' ).html( localStorage.getItem( "views" ) )
-          localStorage[ "ipadd" + count ] = JSON.stringify( ipadd );
-          localStorage.setItem( "count", count );
-
-          var ipadd = JSON.parse(localStorage["ipadd"]);
-          console.log( response );*/
-      }, "jsonp");
-
-     
-
-      
-      
-      
     </script>
   </body>
 </html>
